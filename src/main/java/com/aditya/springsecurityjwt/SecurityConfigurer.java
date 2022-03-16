@@ -38,7 +38,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS); //We have done this to make it work for each request individually
                                         //means if a request has no authorization it won't work instead we just has make a request earlier
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class); //We have added the filter for the authorization purpose means
-                                        //Every call has to be checked if they are authorize to make it or not
+                                        //Every call has to be checked if they are authorize to make it or not as we have enabled once per request filter
     }
 
     //Here We have to generate a bean for AuthenticationManager as it dont have default implementation
